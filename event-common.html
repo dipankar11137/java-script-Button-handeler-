@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>commonEvent</title>
+</head>
+
+<body>
+    <p id="clicking-method"></p>
+    <input id="name-field" type="text">
+    <button id="update-name">Upgate</button>
+    <button onclick="handelJustFunctionClick()">Just Function</button><br>
+    <button id="handel-event">Direct add event Listener</button>
+
+
+    <script>
+        function handelJustFunctionClick() {
+            const p = document.getElementById('clicking-method');
+
+            p.innerText = 'set a function in this value';
+        }
+
+        // direct
+        document.getElementById('handel-event').addEventListener('click', function () {
+            const p = document.getElementById('clicking-method');
+
+            p.innerText = 'aso a function in this value';
+
+        })
+
+        // direct
+        document.getElementById('update-name').addEventListener('click', function () {
+            const nameField = document.getElementById('name-field');
+            const p = document.getElementById('clicking-method');
+            p.innerText = nameField.value;
+            nameField.value = '';
+        })
+    </script>
+</body>
+
+</html>
